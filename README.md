@@ -1,16 +1,52 @@
-# React + Vite
+# EPSU-KNUST Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official website for the Evangelical Presbyterian Students' Union, KNUST Local.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Framework:** Next.js (React Web)
+- **Styling:** Tailwind CSS
+- **Database:** Supabase (Postgres)
+- **Deployment:** Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting Started
 
-## React Compiler
+1. Clone the repository and install dependencies:
+   ```bash
+   npm install
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Create an environment variable and add your credentials
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## FOLDER STRUCTURE:
+
+epsu-knust-web/
+├── public/                     # Static assets (images, fonts, logos)
+│   ├── epsu-logo.png           # EPSU Emblem
+│   └── images/
+│       ├── leaders/            # Headshots of executives
+│       └── hero-bg.jpg         # Hero background image
+├── src/
+│   ├── app/                    # Next.js Routing
+│   │   ├── layout.tsx          # Global layout (Contains Navbar & Footer)
+│   │   ├── page.tsx            # Home Page (index)
+│   │   ├── about/
+│   │   │   └── page.tsx        # About Page (History, Vision, Mission)
+│   │   ├── leaders/
+│   │   │   └── page.tsx        # Leaders Page (Executive roster)
+│   │   ├── contact/
+│   │   │   └── page.tsx        # Contact Page (Contact form & location)
+│   │   └── birthdays/
+│   │       └── page.tsx        # Upcoming Birthdays Finder Page
+│   ├── components/             # Reusable React UI Components
+│   │   ├── Navbar.tsx
+│   │   ├── Footer.tsx
+│   │   ├── LeaderCard.tsx
+│   │   └── BirthdayTracker.tsx
+│   ├── lib/                    # SDK initializations
+│   │   └── supabase.ts         # Supabase client setup
+│   └── utils/                  # Utility functions (date formatting, etc.)
+├── tailwind.config.js          # Tailwind styling configurations
+├── package.json
+└── README.md                   # Setup and documentation
